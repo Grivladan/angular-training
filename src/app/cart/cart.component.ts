@@ -25,4 +25,8 @@ export class CartComponent implements OnInit {
   removeProductFromCart(product: Product): void {
     this.cartService.removeProductFromCart(product);
   }
+
+  isEmptyCart(): boolean {
+    return this.cartProducts != null && this.cartProducts.length > 0;
+  }
 }

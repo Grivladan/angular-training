@@ -1,13 +1,13 @@
 <div id="cart">
-  <div *ngIf="cartProducts != null && cartProducts.length > 0; else emptyCartTemplate">
-      Cart:
-      <div *ngFor="let product of cartProducts">
-          {{product.name}}
-          <button (click)="removeProductFromCart(product)">Delete</button>
-      </div>
-  </div>
+    <div *ngIf="isEmptyCart(); else emptyCartTemplate">
+        Cart:
+        <div *ngFor="let product of cartProducts">
+            {{product.name}}
+            <button (click)="removeProductFromCart(product)">Delete</button>
+        </div>
+    </div>
 
-  <ng-template #emptyCartTemplate>
-      <h4>Your cart is empty</h4>
-  </ng-template>
+    <ng-template #emptyCartTemplate>
+        <h4>Your cart is empty</h4>
+    </ng-template>
 </div>

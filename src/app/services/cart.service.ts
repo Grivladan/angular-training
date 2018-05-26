@@ -7,9 +7,8 @@ import { Product } from '../product/model/product';
 })
 export class CartService {
 
-  cartProducts: Array<Product>;
+  cartProducts: Array<Product> = [];
   constructor() {
-    this.cartProducts = new Array<Product>();
    }
 
   addProductToCart(product: Product): void {
