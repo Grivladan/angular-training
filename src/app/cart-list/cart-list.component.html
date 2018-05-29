@@ -1,10 +1,7 @@
 <div id="cart">
     <div *ngIf="isEmptyCart(); else emptyCartTemplate">
         Cart:
-        <div *ngFor="let product of cartProducts">
-            {{product.name}}
-            <button (click)="removeProductFromCart(product)">Delete</button>
-        </div>
+        <app-cart-item *ngFor="let item of cartItems" [cartItem]=item></app-cart-item>
     </div>
 
     <ng-template #emptyCartTemplate>
