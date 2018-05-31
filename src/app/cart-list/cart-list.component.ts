@@ -25,6 +25,14 @@ export class CartListComponent implements OnInit {
     this.cartService.deleteCartItem(cartItem);
   }
 
+  getCartTotalSum() {
+    return this.cartService.getCartTotalSum();
+  }
+
+  getCartTotalQuontity() {
+    return this.cartService.getCartTotalQuontity();
+  }
+
   isEmptyCart(): boolean {
     return this.cartItems != null && this.cartItems.length > 0;
   }

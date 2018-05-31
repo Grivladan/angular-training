@@ -2,10 +2,7 @@
     {{cartItem.product.name}}
     <div id="input_div">
         <input type="button" value="-" (click)="decreaseQuontity(cartItem.product)">
-        <input type="text" size="25" value={ {cartItem.productQuontity}} id="count">
+        <input type="text" size="25" value={{cartItem.productQuontity}} id="count">
         <input type="button" value="+" (click)="increaseQuontity(cartItem.product)">
     </div>
 </div>
-
-<div class="total-count">Items in cart: {{getCartTotalQuontity()}}</div>
-<div class="total-price">Total price: {{getCartTotalSum()}}</div>

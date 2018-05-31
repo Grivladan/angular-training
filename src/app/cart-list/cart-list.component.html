@@ -1,7 +1,9 @@
 <div id="cart">
-    <div *ngIf="isEmptyCart(); else emptyCartTemplate">
+    <div appHighlight *ngIf="isEmptyCart(); else emptyCartTemplate">
         Cart:
         <app-cart-item *ngFor="let item of cartItems" [cartItem]=item></app-cart-item>
+        <div class="total-count">Items in cart: {{getCartTotalQuontity()}}</div>
+        <div class="total-price">Total price: {{getCartTotalSum()}}</div>
     </div>
 
     <ng-template #emptyCartTemplate>

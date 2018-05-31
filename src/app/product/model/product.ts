@@ -6,7 +6,7 @@ export interface IProduct {
   price: number;
   category: ProductCategory;
   isAvailable: boolean;
-  complectation: Array<string>;
+  complectation?: Array<string>;
   components: Array<string>;
 }
 
@@ -16,6 +16,6 @@ export class Product implements IProduct {
   price: number;
   category: ProductCategory;
   isAvailable: boolean;
-  complectation: Array<string>;
+  complectation?: Array<string>;
   components: Array<string>;
 }
