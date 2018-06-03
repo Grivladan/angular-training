@@ -17,19 +17,11 @@ export class CartItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  decreaseQuontity(product: Product) {
+  decreaseQuantity(product: Product) {
     this.cartService.decreaseQuontity(product);
   }
 
-  increaseQuontity(product: Product) {
+  increaseQuantity(product: Product) {
     this.cartService.addProductToCart(product);
-  }
-
-  getCartTotalSum() {
-    return this.cartService.getCartTotalSum();
-  }
-
-  getCartTotalQuontity() {
-    return this.cartService.getCartTotalQuontity();
   }
 }

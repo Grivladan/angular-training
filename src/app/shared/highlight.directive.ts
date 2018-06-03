@@ -22,8 +22,4 @@ export class HighlightDirective {
   @HostListener('mouseleave') onMouseLeave() {
     this.backgroundColor = '#FFFFE0';
   }
-
-  @HostListener('click') onclick() {
-    alert(123);
-  }
 }

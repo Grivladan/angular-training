@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ProductModule } from './product/product.module';
 import { CartModule } from './cart-list/cart.module';
-import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,8 +12,7 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     CartModule,
-    ProductModule,
-    SharedModule
+    ProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]

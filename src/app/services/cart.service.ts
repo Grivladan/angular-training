@@ -15,10 +15,10 @@ export class CartService {
   addProductToCart(product: Product): void {
     let cartItem = this.getCartItemByProduct(product);
     if (cartItem == null) {
-      cartItem = {product : product, productQuontity : 1};
+      cartItem = {product : product, productQuantity : 1};
       this.cartItems.push(cartItem);
     } else {
-      cartItem.productQuontity++;
+      cartItem.productQuantity++;
     }
   }
 
@@ -35,20 +35,20 @@ export class CartService {
 
   getCartTotalQuontity() {
     return this.cartItems.reduce(function(sum, current) {
-      return sum + current.productQuontity;
+      return sum + current.productQuantity;
     }, 0);
   }
 
   getCartTotalSum() {
     return this.cartItems.reduce(function(sum, current) {
-      return sum + current.productQuontity * current.product.price;
+      return sum + current.productQuantity * current.product.price;
     }, 0);
   }
 
   decreaseQuontity(product: Product) {
     const cartItem = this.getCartItemByProduct(product);
-    if (cartItem != null && cartItem.productQuontity > 0) {
-      cartItem.productQuontity--;
+    if (cartItem != null && cartItem.productQuantity > 0) {
+      cartItem.productQuantity--;
     }
   }
 

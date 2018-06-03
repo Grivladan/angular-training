@@ -11,10 +11,10 @@ import { Product } from '../product/model/product';
 export class CartListComponent implements OnInit {
   cartItems: Array<CartItem>;
   constructor(private cartService: CartService) {
-    this.cartItems = cartService.getCartProducts();
    }
 
   ngOnInit() {
+    this.cartItems = this.cartService.getCartProducts();
   }
 
   addProductToCart(product: Product): void {
