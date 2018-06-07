@@ -1,16 +1,26 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { Product } from '../product/model/product';
-import { CartItem } from '../cart-item/cart-item';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { CartItem } from '../../cart-item/cart-item';
+import { Product } from '../../product/model/product';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  cartItems: Array<CartItem> = [];
+  private cartTotalQuantitySubject = new BehaviorSubject<number>(0);
+  onCartTotalQuantityChanges: Observable<number> = this.cartTotalQuantitySubject.asObservable();
+
+  private cartTotalSumSubject = new BehaviorSubject<number>(0);
+  onCartTotalSumChanges: Observable<number> = this.cartTotalSumSubject.asObservable();
+
+  private cartItems: Array<CartItem> = [];
+  cartSubject = new BehaviorSubject<CartItem[]>(null);
+  cartChanges: Observable<CartItem[]> = this.cartSubject.asObservable();
+
   constructor() {
-   }
+  }
 
   addProductToCart(product: Product): void {
     let cartItem = this.getCartItemByProduct(product);
@@ -20,6 +30,8 @@ export class CartService {
     } else {
       cartItem.productQuantity++;
     }
+
+    this.updateCart();
   }
 
   getCartProducts() {
@@ -31,6 +43,13 @@ export class CartService {
     if (index > -1) {
       this.cartItems.splice(index, 1);
     }
+
+    this.updateCart();
+  }
+
+  resetCart() {
+    this.cartItems = [];
+    this.updateCart();
   }
 
   getCartTotalQuontity() {
@@ -50,9 +69,17 @@ export class CartService {
     if (cartItem != null && cartItem.productQuantity > 0) {
       cartItem.productQuantity--;
     }
+
+    this.updateCart();
   }
 
   private getCartItemByProduct(product: Product) {
-      return this.cartItems.find(x => x.product === product);
+    return this.cartItems.find(x => x.product === product);
+  }
+
+  private updateCart(): void {
+    this.cartSubject.next(this.cartItems);
+    this.cartTotalSumSubject.next(this.getCartTotalSum());
+    this.cartTotalQuantitySubject.next(this.getCartTotalQuontity());
   }
 }

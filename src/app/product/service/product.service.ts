@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../product/model/product';
-import { PRODUCTS } from '../product/model/mock-products';
+import { Product } from '../model/product';
+import { PRODUCTS } from '../model/mock-products';
+
 
 
 @Injectable({

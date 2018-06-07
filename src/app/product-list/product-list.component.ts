@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, ViewChild } from '@angular/core';
 import { ProductComponent } from '../product/product.component';
 import { Product } from '../product/model/product';
-import { ProductService } from '../services/product.service';
+import { ProductService } from '../product/service/product.service';
 
 @Component({
   selector: 'app-product-list',
