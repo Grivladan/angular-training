@@ -9,7 +9,7 @@ import { ProductService } from '../product/service/product.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products: Array<Product>;
+  products: Promise<Array<Product>>;
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onBuy: EventEmitter<Product> = new EventEmitter();
 

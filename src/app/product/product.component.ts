@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from './model/product';
+import { ProductCategory } from './model/product-category';
 
 
 @Component({
@@ -9,9 +10,9 @@ import { Product } from './model/product';
 })
 export class ProductComponent implements OnInit {
   @Input() product: Product;
+  productCategory = ProductCategory;
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onBuy: EventEmitter<Product> = new EventEmitter();
-
   constructor() { }
 
   ngOnInit() {

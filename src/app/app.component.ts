@@ -14,7 +14,7 @@ import { ConfigOptions } from './model/config-options';
 })
 export class AppComponent {
   title = 'app';
-  currentTime: string;
+  currentDate: Date;
 
   constructor(@Optional() constantsService: ConstantsService,
               @Optional() configService: ConfigOptionsService,
@@ -35,5 +35,10 @@ export class AppComponent {
   onBuy($event: Product) {
     console.log('Product was added');
     this.cart.addProductToCart($event);
+  }
+
+  // tslint:disable-next-line:use-life-cycle-interface
+  ngOnInit() {
+    this.currentDate = new Date(2018, 6, 8);
   }
 }

@@ -1,8 +1,8 @@
 <div class="product-item" [ngStyle]="{'background-color':product.isAvailable ? 'lightblue' : 'red' }">
     <div>Name: {{ product.name }}</div>
     <div>Description: {{product.description}}</div>
-    <div>Price: {{product.price}}</div>
-    <div>Category: {{ product.category }}</div>
+    <div>Price: {{product.price | currency}}</div>
+    <div>Category: {{productCategory[product.category] | uppercase}}</div>
     <div>Is available: {{product.isAvailable}}</div>
     <button (click)="onBuy.emit(product)" [disabled]="!product.isAvailable">Buy</button>
 </div>

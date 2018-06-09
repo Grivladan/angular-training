@@ -11,7 +11,7 @@ export class ProductService {
 
   constructor() { }
 
-  getProducts(): Product[] {
-    return PRODUCTS;
+  getProducts(): Promise<Product[]> {
+    return Promise.resolve(PRODUCTS);
   }
 }

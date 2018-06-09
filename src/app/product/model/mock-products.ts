@@ -9,8 +9,17 @@ export const PRODUCTS: Product[] = [
       price: 1000,
       category: ProductCategory.Laptop,
       isAvailable: true,
-      complectation: ["complectation1", "complectation2"],
-      components: ["component1", "component2", "component3"]
+      complectation: ['complectation1', 'complectation2'],
+      components: ['component1', 'component2', 'component3']
+    },
+    {
+      name: 'HP',
+      description: 'HP description',
+      price: 3000,
+      category: ProductCategory.Notebook,
+      isAvailable: true,
+      complectation: ['complectation1', 'complectation2'],
+      components: ['component1', 'component2', 'component3']
     },
     {
       name: 'Acer',
@@ -18,7 +27,7 @@ export const PRODUCTS: Product[] = [
       price: 2000,
       category: ProductCategory.Notebook,
       isAvailable: true,
-      complectation: ["complectation1", "complectation2"],
-      components: ["component1", "component2", "component3"]
+      complectation: ['complectation1', 'complectation2'],
+      components: ['component1', 'component2', 'component3']
     }
 ];
